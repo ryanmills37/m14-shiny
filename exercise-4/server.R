@@ -19,10 +19,12 @@ shinyServer(function(input, output) {
   
   # Render a plotly object that returns your map
   output$map <- renderPlotly({ 
+    
       return(BuildMap(joined.data, input$mapvar))
   }) 
-  
+  # The plotly that returns the Scatter Plot
   output$scatter <- renderPlotly({
+    
     return(BuildScatter(joined.data, input$search))
   })
 })
